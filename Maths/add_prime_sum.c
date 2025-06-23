@@ -1,5 +1,4 @@
- 
-//Calcule la somme de tous les nombres premiers inférieurs ou égaux à ce nombre.
+ //Calcule la somme de tous les nombres premiers inférieurs ou égaux à ce nombre.
 
 #include <unistd.h>
 

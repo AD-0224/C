@@ -1,4 +1,3 @@
-
 #include <stdio.h> //Pour utiliser printf
 #include <stdlib.h> //Pour utiliser atoi
 

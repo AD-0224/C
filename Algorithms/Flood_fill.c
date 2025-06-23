@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Flood_fill.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/26 22:54:15 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/26 22:54:15 by marvin           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "flood_fill.h"
 
 void    fill(char **tab, t_point size, t_point cur, char to_fill) //fonction recursive tu commences ou et tu remplie avec quoi 
