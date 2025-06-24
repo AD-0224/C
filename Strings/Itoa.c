@@ -1,6 +1,5 @@
 #include <stdlib.h> 
-// Cette fonction calcule combien de chiffres contient un entier
-// (ex: 123 = 3 chiffres, -42 = 2 chiffres + 1 pour le '-')
+
 int	ft_intlen(int n)
 {
 	int	len = 0;
@@ -8,10 +7,10 @@ int	ft_intlen(int n)
 		len++;
 	while (n)
 	{
-		n /= 10;  // On enlève un chiffre à chaque tour
-		len++;    // On compte ce chiffre
+		n /= 10;
+		len++;
 	}
-	return (len); // On retourne le total
+	return (len);
 }
 
 char	*ft_itoa(int nbr)
@@ -38,9 +37,9 @@ char	*ft_itoa(int nbr)
 	return (str);
 }
 
-// #include <stdio.h> // pour printf
+// #include <stdio.h>
 
-// char *ft_itoa(int n); // ta fonction à tester
+// char *ft_itoa(int n);
 
 // int main(void)
 // {

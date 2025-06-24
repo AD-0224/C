@@ -10,22 +10,22 @@ int main(int argc, char **argv)
         flg = 0;
         i = 0; 
 
-        while (argv[1][i] == ' ' || argv[1][i] == '\t') //on ignore les espaces et tabulations du début pour commencer avec un caractere
+        while (argv[1][i] == ' ' || argv[1][i] == '\t')
             i++;
         while (argv[1][i])
         {
-            if (argv[1][i] == ' ' || argv[1][i] == '\t') //si on en voit 
+            if (argv[1][i] == ' ' || argv[1][i] == '\t')
                 flg = 1;
-            if (!(argv[1][i] == ' ' || argv[1][i] == '\t')) //si c'est un caractere et qu'on a un flag, on met un espace
+            if (!(argv[1][i] == ' ' || argv[1][i] == '\t'))
             {
-                if (flg) //si on a rencontré un espace ou une tabulation
-                    write (1, " ", 1); //on ecrit un espace
-                flg = 0; //on remet a 0 pour reparcourir la chaine
-                write (1, &argv[1][i], 1); //on écrit le caractere actuel
+                if (flg)
+                    write (1, " ", 1);
+                flg = 0;
+                write (1, &argv[1][i], 1);
             }
             i++; 
         }
     }
     write(1, "\n", 1);
-    return (0); //le programm s'est terminé avec succés
+    return (0);
 }

@@ -6,18 +6,18 @@ void rstr_capitalizer(char *str)
 
     while (str[i])
     {
-        if (str[i] >= 'A' && str[i] <= 'Z') //on met tout en minuscule
+        if (str[i] >= 'A' && str[i] <= 'Z')
             str[i] += 32;
-        if ((str[i] >= 'a' && str[i] <= 'z') && (str[i + 1] == ' ' || str[i + 1] == '\t' || str[i + 1] == '\0')) //Si c'est en minuscule et que le caractere d'aprees est un espqce ou ..
-            str[i] -= 32; //on met en majuscule
-        write (1, &str[i++], 1); //on parcours la chaine   
+        if ((str[i] >= 'a' && str[i] <= 'z') && (str[i + 1] == ' ' || str[i + 1] == '\t' || str[i + 1] == '\0')) 
+            str[i] -= 32;
+        write (1, &str[i++], 1);  
     }
 }
 
 int main (int argc, char **argv)
 {
     int i = 1;
-    if (argc > 1) //Tant qu'au moins 1 argument est passé
+    if (argc > 1)
     {
         while (argv[i])
         {

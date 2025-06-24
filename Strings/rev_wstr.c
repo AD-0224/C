@@ -5,7 +5,7 @@ void	rev_wstr(char *str)
 	int i = 0;
 	int start;
 
-	while (str[i] == ' ' || str[i] == '\t') //on ignore ceux du début
+	while (str[i] == ' ' || str[i] == '\t')
 		i++;
 	if (str[i] == '\0')
 		return;

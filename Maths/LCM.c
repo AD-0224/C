@@ -1,4 +1,4 @@
-unsigned    int lcm(unsigned int a, unsigned int b) //Lowest Common Multiple
+unsigned    int lcm(unsigned int a, unsigned int b)
 {
     unsigned    int n;
 

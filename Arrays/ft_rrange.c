@@ -15,10 +15,10 @@ int *ft_rrange(int start, int end)
         return(NULL);
     while (i < len)
     {
-        if (start <= end) //ordre croissant
-            res[i] = end - i; //9876
+        if (start <= end)
+            res[i] = end - i;
         else
-            res[i] = end + i; //6789
+            res[i] = end + i; 
         i++;
     }
     return (res);

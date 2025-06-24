@@ -1,6 +1,4 @@
- //Calcule la somme de tous les nombres premiers inférieurs ou égaux à ce nombre.
-
-#include <unistd.h>
+ #include <unistd.h>
 
 void	ft_putchar(char c)
 {
@@ -28,23 +26,23 @@ int		ft_atoi(char *str)
 
 int		is_prime(int n)
 {
-	int i = 2; //diviseur
+	int i = 2;
 
 	if (n < 2)
-		return (0);  // les nombres < 2 ne sont pas premiers
-	while (i * i <= n) //on a depassé la racine carrée de n donc on arrete a ce moment la 
+		return (0);
+	while (i * i <= n)
 	{
-		if (n % i == 0) //si il est divisible pas premier
+		if (n % i == 0)
 			return (0);
-		i++; //on continue a chercher 
+		i++;
 	}
-	return (1); //Si on n’a trouvé aucun diviseur jusqu’à √n, alors le nombre est premier
+	return (1);
 }
 
 int	main(int argc, char **argv)
 {
 	int	n;
-	int	sum = 0; //somme des nombres premier
+	int	sum = 0;
 	if (argc != 2)
 	{
 		write(1, "0\n", 2);
@@ -57,7 +55,7 @@ int	main(int argc, char **argv)
 			sum = sum + n;
 		n--;
 	}
-	ft_putnbr(sum); //Afficher la somme des nombres premiers
+	ft_putnbr(sum); 
 	write(1, "\n", 1);
 	return (0);
 }

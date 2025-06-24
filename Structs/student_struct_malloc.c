@@ -28,8 +28,7 @@ int main ()
     printf("Taille: ");
     scanf("%f", &e1 -> taille);
 
-    printf("L'etudiant s'appelle %s il a %d ans, et fait %.2f m \n", e1 -> nom, e1 -> age, e1 -> taille);            //.%2f 2 chiffre significatif
-
+    printf("L'etudiant s'appelle %s il a %d ans, et fait %.2f m \n", e1 -> nom, e1 -> age, e1 -> taille);
 
     free (e1);
     return (0);

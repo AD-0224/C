@@ -12,10 +12,10 @@ student;
 
 int compare_by_note(const void *a, const void *b)
 {
-    const student *studentA = (const student*)a; //Le cast (const student*)a transforme un pointeur générique en pointeur vers un étudiant,
+    const student *studentA = (const student*)a; 
     const student *studentB = (const student*)b;
 
-    if (studentA->average < studentB->average) return (-1); // permet d’accéder à un champ de l’étudiant pointé.
+    if (studentA->average < studentB->average) return (-1);
     if (studentA->average > studentB->average)return (1);
     return(0);
 }

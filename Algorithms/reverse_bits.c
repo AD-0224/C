@@ -5,7 +5,7 @@ unsigned char	reverse_bit(unsigned char octet)
 	while (i--)
 	{
 		result = (result << 1) | (octet & 1); 
-		octet >>= 1; // Décale octet à droite pour traiter le bit suivant.
+		octet >>= 1;
 	}
 	return (result);
 }

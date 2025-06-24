@@ -3,7 +3,7 @@ int	ft_atoi(char *str)
 	int	result = 0;
 	int	sign = 1;
 
-	while (*str == ' ' || (*str >= 9 && *str <= 13))// white space
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
 	if (*str == '-')
 		sign = -1;
@@ -11,7 +11,7 @@ int	ft_atoi(char *str)
 		str++;
 	while (*str >= '0' && *str <= '9')
 	{
-		result = result * 10 + *str - '0'; //decalle vers la gauche pour laisser de la place  et converti en ASCII
+		result = result * 10 + *str - '0';
 		str++;
 	}
 	return (sign * result);
@@ -20,6 +20,6 @@ int	ft_atoi(char *str)
 // #include <stdio.h>
 // int main (void)
 // {
-// 	printf("%d", ft_atoi("42"));
+// 	printf("%d", ft_atoi("213"));
 // 	return 0;
 // }

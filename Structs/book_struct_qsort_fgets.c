@@ -10,7 +10,6 @@ typedef struct
     float note;
 } book;
 
-// Comparaison par note (ordre croissant)
 int compare_by_note(const void* a, const void* b)
 {
     float noteA = ((book*)a)->note;
@@ -20,7 +19,6 @@ int compare_by_note(const void* a, const void* b)
     return 0;
 }
 
-// Comparaison par titre (ordre alphabétique)
 int compare_by_title(const void* a, const void* b)
 {
     return strcmp(((book*)a)->title, ((book*)b)->title);

@@ -7,16 +7,16 @@ int main (int argc, char **argv)
 
 	if (argc == 3)
 	{
-		while (argv[1][i] && argv[2][j]) //on a pas fini de les parcourir
+		while (argv[1][i] && argv[2][j])
 		{
-			if (argv[1][i] == argv[2][j]) //si les caractere correspondent
+			if (argv[1][i] == argv[2][j]) 
 				i++;
 			j++;
 		}
-		if (argv[1][i] == '\0') //quand on a fini de parcourir la chaine
+		if (argv[1][i] == '\0')
 		{
-			j = 0; //Du début pour la reproduire
-			while (argv[1][j]) //si on peut reproduire la seconde chaine, on l'affiche
+			j = 0;
+			while (argv[1][j])
 			{
 				write(1, &argv[1][j], 1);
 				j++;

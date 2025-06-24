@@ -7,13 +7,13 @@ int main (int argc, char **argv)
 
     if (argc == 3)
     {
-        while (argv[2][j] && argv[1][i]) //si elles ne sont pas finis
+        while (argv[2][j] && argv[1][i])
         {
-            if (argv[2][j] == argv[1][i]) //si on trouve le meme caractere
+            if (argv[2][j] == argv[1][i])
                 i++;
             j++;
         }
-        if (argv[1][i] == '\0') //si on a tout parcouru
+        if (argv[1][i] == '\0')
             write(1, "1", 1);
         else
             write(1, "0", 1);

@@ -5,8 +5,8 @@ int	max (int *tab, unsigned int len)
 
 	if (len == 0)
 		return (0); 
-	result = tab[i]; // par defaut on initialise result au debut du tableau
-	while (i < len) //Tant qu'on a pas tout parcouru
+	result = tab[i];
+	while (i < len)
 	{
 		if (result < tab[i]) 
 			result = tab[i];

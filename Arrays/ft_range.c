@@ -6,25 +6,22 @@ int *ft_range (int start, int end)
     int len;
     int *res;
 
-    //calcule la taille du tableau
-    if (start <= end) //ordre croissant
+    if (start <= end)
         len = end - start + 1;
     else 
-        len = start - end + 1; //ordre decroissant
-    //allocation de memoire
+        len = start - end + 1;
     res = (int *)malloc(sizeof(int) * len);
     if (!res)
         return (NULL);
-    //remplissage
     while (i < len)
     {
-        if (start < end) //croissant on fait dans l'ordre
+        if (start < end)
         {
             res[i] = start;
             start++;
             i++;
         }
-        else //decroissant on remplit dans l'ordre inverse
+        else
         {
             res[i] = start;
             start--;

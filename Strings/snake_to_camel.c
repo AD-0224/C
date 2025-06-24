@@ -7,7 +7,7 @@ int	main(int argc, char **argv)
 	{
 		while (argv[1][i] != '\0')
 		{
-			if (argv[1][i] == '_') //si c'est égale a un _ alors on passe au suivant qu'on met en majuscule
+			if (argv[1][i] == '_')
 			{
 				i++;
 				argv[1][i] -= 32;

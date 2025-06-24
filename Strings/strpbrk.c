@@ -1,6 +1,3 @@
-// La fonction strpbrk recherche dans la chaîne s1 le premier caractère qui appartient
-// à l'ensemble de caractères spécifié dans la chaîne s2. 
-
 #include <stddef.h>
 
 char	*ft_strpbrk(const char *s1, const char *s2)

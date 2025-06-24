@@ -11,9 +11,9 @@ int main (int argc, char **argv)
 
     if (argc == 3)
     {
-        if (nbr1 > 0 && nbr2 > 0) //Si ils sont tous les 2 positifs
+        if (nbr1 > 0 && nbr2 > 0)
         {
-            while (nbr2 != 0) //condition pour de theoreme euclide
+            while (nbr2 != 0)
             {
                 temp = nbr2;
                 nbr2 = nbr1 % nbr2;

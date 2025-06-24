@@ -1,11 +1,11 @@
 int ft_atoi_base(const char *str, int str_base)
 {
-    int res = 0; //resultat
-    int sign = 1; //pour géré les signes
-    int i = 0; //index
-    int    c; // Valeur numérique du caractère actuel
+    int res = 0;
+    int sign = 1;
+    int i = 0;
+    int    c;
 
-    if (!str || str_base < 2 || str_base > 16 ) //limite si la chaine n'est pas dans la base
+    if (!str || str_base < 2 || str_base > 16 )
         return 0;
     if (*str == '-')
     {
@@ -15,9 +15,9 @@ int ft_atoi_base(const char *str, int str_base)
     while(str[i])
     {
         if (str[i] >= '0' && str[i] <= '9')
-            c = str[i] - '0';                       //conversion des chiffres en ASCII
+            c = str[i] - '0';
         else if (str[i] >= 'a' && str[i] <= 'f')
-            c = str[i] - 'a' + 10;                  // Convertit la lettre en sa valeur numérique (10-15)
+            c = str[i] - 'a' + 10;
         else if (str[i] >= 'A' && str[i] <= 'F')
             c = str[i] - 'A' + 10;
         else

@@ -8,9 +8,9 @@ int	main(int argc, char **argv)
 	{
 		while (argv[1][i] == 32 || argv[1][i] == 9) 
 			i++;
-		while (argv[1][i] && argv[1][i] != 32 && argv[1][i] != 9) //si elle n'est pas vide et que c'est ni un espace ni une tabulation 
+		while (argv[1][i] && argv[1][i] != 32 && argv[1][i] != 9)
 		{
-			write (1, &argv[1][i], 1); //on ecrit le caractere
+			write (1, &argv[1][i], 1);
 			i++;
 		}
 	}

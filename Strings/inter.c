@@ -1,6 +1,6 @@
 #include <unistd.h>
 
-int	main (int argc, char **argv) //afficher une chaine dans l'ordre sans les doubles 
+int	main (int argc, char **argv)
 {
 	int	i;
 	int	j;
@@ -13,9 +13,9 @@ int	main (int argc, char **argv) //afficher une chaine dans l'ordre sans les dou
 			j = 0;
 			while (argv[2][j])
 			{
-				if (argv[1][i] == argv[2][j]) //si ils sont identiques
+				if (argv[1][i] == argv[2][j])
 				{
-					if (!seen[(unsigned char) argv[1][i]]) //Si on l'avait pas deja vu on le met comme vu
+					if (!seen[(unsigned char) argv[1][i]])
 					{
 						write(1, &argv[1][i], 1);
 						seen [(unsigned char)argv[1][i]] = 1;

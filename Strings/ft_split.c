@@ -30,6 +30,6 @@ char	**ft_split(char *s)
 
 // int main(void)
 // {
-// 	char **s = ft_split("salut les amis");
+// 	char **s = ft_split("one two three");
 // 	while (*s) printf("%s\n", *s++);
 // }

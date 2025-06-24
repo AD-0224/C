@@ -17,7 +17,7 @@ int main() {
 
     printf("Combien y a-t-il d'étudiants ? ");
     scanf("%d", &n);
-    while ((c = getchar()) != '\n' && c != EOF); // Nettoyage après scanf
+    while ((c = getchar()) != '\n' && c != EOF);
 
     etudiant* liste = malloc(sizeof(etudiant) * n);
     if (liste == NULL) {

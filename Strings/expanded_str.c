@@ -9,7 +9,7 @@ int main (int argc, char const **argv)
     {
         i = 0;
         flg = 0;
-        while (argv [1][i] == ' ' || argv [1][i] == '\t') //on ignore ceux du debut pour par les re ecrire 
+        while (argv [1][i] == ' ' || argv [1][i] == '\t')
             i++;
         while (argv [1][i])
         {

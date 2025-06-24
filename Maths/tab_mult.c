@@ -26,21 +26,21 @@ int		ft_atoi(char *str)
 
 int main (int argc, char **argv)
 {
-    int i = 1; //premier multiplicateur
-    int n = ft_atoi(argv[1]); //celui dont on veut trouver la table
+    int i = 1;
+    int n = ft_atoi(argv[1]);
     if (argc == 2)
     {
-        while (i <= 9) //entre 1 et 9
+        while (i <= 9)
         {
-            ft_putnbr(i); //chiffre
+            ft_putnbr(i);
             ft_putchar(' ');
             ft_putchar('x');
             ft_putchar(' ');
-            ft_putnbr(n); //chiffre
+            ft_putnbr(n);
             ft_putchar(' ');
             ft_putchar('=');
             ft_putchar(' ');
-            ft_putnbr(i * n); //chiffre
+            ft_putnbr(i * n);
             ft_putchar('\n');
             i++;
         }

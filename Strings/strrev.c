@@ -5,14 +5,14 @@ char *ft_strrev(char *str)
 	char	temp;
 
 	if (!str)
-		return (0); //Si elle est nulle
+		return (0);
 	while (str[len])
-		len++; //Compteur
+		len++;
 	while (i < len / 2)
 	{
 		temp = str[i];
-		str[i] = str[len - 1 - i];  // Remplace le caractère à la position i par celui de la fin
-		str[len - 1 - i] = temp;// Place l'ancien caractère à la fin
+		str[i] = str[len - 1 - i];
+		str[len - 1 - i] = temp;
 		i++;
 	}
 	return (str);

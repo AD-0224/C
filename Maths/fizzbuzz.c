@@ -2,10 +2,10 @@
 
 void	ft_write_number(int number)
 {
-	char str[10] = "0123456789"; //Mapping str[2] = '2'
+	char str[10] = "0123456789";
 	if (number > 9)
-		ft_write_number(number / 10); //recursion
-	write (1, &str[number % 10], 1); //donne le dernier chiffre
+		ft_write_number(number / 10);
+	write (1, &str[number % 10], 1);
 }
 
 int main ()
