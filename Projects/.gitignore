@@ -1,16 +1,6 @@
-# VS Code settings (local only)
+# Ignore Visual Studio Code configs
 .vscode/
 
-# Build directories
-build/
-bin/
-
-# Compilation artifacts
-*.o
-*.out
-*.exe
-
-# Backup / system files
-*~
-.DS_Store
-Thumbs.db
+# Ignore compiled binaries and build outputs
+**/build/
+**/bin/
