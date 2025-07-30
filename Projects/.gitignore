@@ -1,6 +1,9 @@
 # Ignore Visual Studio Code configs
 .vscode/
 
-# Ignore compiled binaries and build outputs
+# Ignore compiled binaries and build outputs everywhere
 **/build/
 **/bin/
+
+# Ignore draft folder anywhere
+**/DRAFT/
