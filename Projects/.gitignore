@@ -1,0 +1,16 @@
+# VS Code settings (local only)
+.vscode/
+
+# Build directories
+build/
+bin/
+
+# Compilation artifacts
+*.o
+*.out
+*.exe
+
+# Backup / system files
+*~
+.DS_Store
+Thumbs.db
