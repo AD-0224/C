@@ -1,6 +1,5 @@
 #include<stddef.h>
 
-
 char *my_strchr(const char *str, int c)
 {
     while (*str != '\0')
@@ -11,7 +10,6 @@ char *my_strchr(const char *str, int c)
         }
         str++;
     }
-
     if (c == '\0')
     {
         return (char *)str;

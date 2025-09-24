@@ -9,7 +9,7 @@ TARGET = $(BIN_DIR)/hashtableimplementation_app
 SRCS = $(wildcard $(SRC_DIR)/*.c)
 OBJS = $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(SRCS))
 
-# === RÈGLES ===
+# === RULES ===
 all: $(TARGET)
 
 $(TARGET): $(OBJS)

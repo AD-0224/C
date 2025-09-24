@@ -13,7 +13,7 @@ typedef struct Node
 } Node;
 
 typedef struct HashTable
-{
+{   
     Node **buckets;
     size_t size;
     size_t capacity;

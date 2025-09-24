@@ -70,14 +70,19 @@ int main()
     if (choice == 1)
     {
         qsort(liste, n, sizeof(book), compare_by_note);
-    } else if (choice == 2) {
+    } 
+    else if (choice == 2)
+    {
         qsort(liste, n, sizeof(book), compare_by_title);
-    } else {
+    }
+    else
+    {
         printf("Invalid choice, displaying unsorted list.\n");
     }
 
     printf("\n--- LIST ---\n");
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         average += liste[i].note;
         printf("TITLE: %s | TYPE: %s | YEARS: %d | NOTE: %.2f\n", liste[i].title, liste[i].type, liste[i].years, liste[i].note);
     }

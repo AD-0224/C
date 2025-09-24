@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "list.h"
+#include "ft_list.h"
 
 t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
 {
@@ -8,15 +8,15 @@ t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
 
     while (lst != NULL && lst -> next != NULL)
     {
-        if ((*cmp)(lst -> data, lst -> next -> data) == 0) //pas trie
+        if ((*cmp)(lst -> data, lst -> next -> data) == 0) //Not sort
         {
             temp = lst -> data;
             lst -> data = lst -> next -> data;
             lst -> next -> data = temp;
-            lst = start;  // on repart du début pour vérifier tout à nouveau
+            lst = start;
         }
         else 
-            lst = lst -> next; //si elle est trie on continue a parcourir la chaine
+            lst = lst -> next;
     }
     return (start);
 }

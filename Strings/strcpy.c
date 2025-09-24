@@ -14,7 +14,7 @@ char	*ft_strcpy(char *s1, char *s2)
 // int main (void)
 // {
 // 	char a[100], b[100];
-// 	printf("%s\n", ft_strcpy(a, "SALUT"));
-// 	printf("%s\n", strcpy(b, "SALUT"));
+// 	printf("%s\n", ft_strcpy(a, "abcd"));
+// 	printf("%s\n", strcpy(b, "abcd"));
 // 	return(0);
 // }

@@ -4,7 +4,7 @@ void   ft_list_foreach(t_list *begin_list, void(*f) (void*))
 {
     while (begin_list)
     {
-        (*f)(begin_list -> data); //Applique la fonction a l'element actuel 
-        begin_list = begin_list -> next; //passe a l'element suivant 
+        (*f)(begin_list -> data); //Applies the function to the current element
+        begin_list = begin_list -> next; //move on to the next element
     }
 }

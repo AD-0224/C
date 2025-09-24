@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-#define HELLO() printf("Hello tranquille chakal\n");\
-                printf("Je suis malade\n");\
-                printf("vraiment\n");
+#define HELLO() printf("Hello\n");\
+                printf("I'm sick\n");\
+                printf("Really\n");
 int main ()
 {
     HELLO()

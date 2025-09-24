@@ -1,23 +1,21 @@
 
 #include <stdio.h>
 
-// Active un mode en décommentant la ligne souhaitée
 // #define DEBUG
 // #define TEST
 
 int main()
 {
-    printf("=== Lancement du programme ===\n");
+    printf("=== Program launch ===\n");
 
     #ifdef DEBUG
-        printf("[DEBUG] Affichage des variables internes...\n");
+        printf("[DEBUG] Display of internal variables...\n");
     #endif
 
     #ifdef TEST
-        printf("[TEST] Mode test : données simulées.\n");
+        printf("[TEST] Test mode: simulated data.\n");
     #endif
 
-    printf("Programme principal.\n");
-
+    printf("Main program.\n");
     return 0;
 }

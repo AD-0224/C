@@ -9,7 +9,6 @@ typedef struct
 }
 student;
 
-
 int compare_by_note(const void *a, const void *b)
 {
     const student *studentA = (const student*)a; 

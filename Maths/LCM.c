@@ -1,7 +1,6 @@
 unsigned    int lcm(unsigned int a, unsigned int b)
 {
     unsigned    int n;
-
     if (a == 0 || b == 0)
         return(0);
     if (a > b)
@@ -17,7 +16,6 @@ unsigned    int lcm(unsigned int a, unsigned int b)
 }
 
 // #include <stdio.h>
-
 // unsigned int lcm(unsigned int a, unsigned int b);
 
 // int main() {

@@ -48,7 +48,8 @@ void remove_element(IntArray *arr, int value)
                 arr->data[j] = arr->data[j + 1];
             }
             arr->size--;
-        }else
+        }
+        else
         {
             i++;
         }
@@ -57,7 +58,7 @@ void remove_element(IntArray *arr, int value)
 
 void print_array(const IntArray *arr)
 {
-    printf("Tableau(%zu/%zu) : ", arr->size, arr->capacity);
+    printf("Array(%zu/%zu): ", arr->size, arr->capacity);
     for (size_t i = 0; i < arr->size; i++)
     {
         printf("%d ", arr->data[i]);

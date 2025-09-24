@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-#define INCREMENTE(x) (x + 1)
+#define INCREMENT(x) (x + 1)
 int main ()
 {
-    printf("%d\n", INCREMENTE(5));
+    printf("%d\n", INCREMENT(5));
     return (0);
 }

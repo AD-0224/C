@@ -2,10 +2,10 @@
 
 int main()
 {
-    // 1. Créer la hashtable
+    // 1. Create HT
     HashTable* ht = hash_table_create(7);
     
-    // 2. Ajouter quelques éléments
+    // 2. Add items
     hash_table_insert(ht, "alice", "123");
     hash_table_insert(ht, "bob", "456");
     hash_table_insert(ht, "charlie", "789");
@@ -15,7 +15,7 @@ int main()
     
     printf("Load factor: %.2f\n", hash_table_load_factor(ht));
     
-    // 3. Tester la recherche
+    // 3. Test the search
     char* result = hash_table_get(ht, "alice");
     printf("alice: %s\n", result ? result : "NULL");
     
@@ -37,12 +37,12 @@ int main()
     result = hash_table_get(ht, "inexistant");
     printf("inexistant: %s\n", result ? result : "NULL");
     
-    // 4. Tester la suppression
+    // 4. Test the deletion
     hash_table_delete(ht, "bob");
     result = hash_table_get(ht, "bob");
     printf("bob après suppression: %s\n", result ? result : "NULL");
     
-    // 5. Tester le redimensionnement
+    // 5. Test the resizing
     printf("\nTesting resize...\n");
     for (int i = 0; i < 20; i++)
     {

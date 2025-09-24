@@ -10,7 +10,8 @@ typedef struct
     float moyenne;
 } etudiant;
 
-int main() {
+int main()
+{
     int n;
     int c;
     float moyenneg = 0;
@@ -20,7 +21,8 @@ int main() {
     while ((c = getchar()) != '\n' && c != EOF);
 
     etudiant* liste = malloc(sizeof(etudiant) * n);
-    if (liste == NULL) {
+    if (liste == NULL)
+    {
         printf("Erreur d'allocation\n");
         return 1;
     }
