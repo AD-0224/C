@@ -22,10 +22,7 @@ This repo includes hands-on practice on:
 
 ## 👩‍💻 About Me
 
-After my initial training at 42, I transitioned into self-directed learning and project-based practice. I'm now focused on becoming a **C/C++ freelance developer**, sharing my progress and methodology through:
-
-- 📘 An eBook for beginners in C/C++ and freelancing
-- 🗂️ Ready-to-use planners and trackers for structured learning
+After my initial training at 42, I transitioned into self-directed learning and project-based practice. I'm now focused on becoming a **C/C++ freelance developer**, sharing my progress and methodology through.
 
 ## 🧭 What’s Next?
 
@@ -42,5 +39,3 @@ If you’re a recruiter, developer, or entrepreneur interested in collaboration 
 - Coming soon: [My Freelance Portfolio Website](#)
 
 ---
-
-> “Auto-apprends, sans auto-détruire.” – *Zelvia™*
