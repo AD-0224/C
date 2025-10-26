@@ -5,13 +5,14 @@ IntArray *create_array(size_t initial_capacity)
     IntArray *arr = malloc(sizeof(IntArray));
     if (!arr)
     {
-        printf("Allocation error");
+        printf("Allocation error\n");
         return (NULL);
     }
     arr->data = malloc(sizeof(int) * initial_capacity);
     if (!arr->data)
     {
-        printf("Allocation error");
+        printf("Allocation error\n");
+        free(arr);
         return (NULL);
     }
     arr->size = 0;
@@ -21,13 +22,14 @@ IntArray *create_array(size_t initial_capacity)
 
 void add_element(IntArray *arr, int value)
 {
-    if (arr->size >= arr ->capacity)
+    if (!arr) return;
+    if (arr->size >= arr->capacity)
     {
         size_t new_capacity = arr->capacity * 2;
         int *temp = realloc(arr->data, new_capacity * sizeof(int));
         if (!temp)
         {
-            printf("Allocation error");
+            printf("Allocation error\n");
             return;
         }
         arr->data = temp;
@@ -38,6 +40,7 @@ void add_element(IntArray *arr, int value)
 
 void remove_element(IntArray *arr, int value)
 {
+    if (!arr) return;
     size_t i = 0;
     while(i < arr->size)
     {
@@ -58,6 +61,11 @@ void remove_element(IntArray *arr, int value)
 
 void print_array(const IntArray *arr)
 {
+    if (!arr)
+    {
+        printf("Array is NULL\n");
+        return;
+    }
     printf("Array(%zu/%zu): ", arr->size, arr->capacity);
     for (size_t i = 0; i < arr->size; i++)
     {

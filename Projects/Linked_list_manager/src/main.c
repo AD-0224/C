@@ -2,18 +2,19 @@
 
 int main()
 {
-    IntArray * arr = create_array(4);
+    IntArray * arr = create_array(5);
     if (!arr) return EXIT_FAILURE;
 
-    add_element(arr, 10);
-    add_element(arr, 20);
-    add_element(arr, 30);
-    add_element(arr, 40);
-    add_element(arr, 50);
+    add_element(arr, 100);
+    add_element(arr, 101);
+    add_element(arr, 200);
+    add_element(arr, 300);
+    add_element(arr, 400);
+    add_element(arr, 500);
 
     print_array(arr);
 
-    remove_element(arr, 10);
+    remove_element(arr, 101);
     print_array(arr);
 
     free_array(arr);
