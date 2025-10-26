@@ -3,7 +3,7 @@
 char **parse_input(char *input, char **args)
 {
     int i = 0;
-    const char * separators = " \n";
+    const char *separators = " \n";
     char *strToken = strtok(input, separators); //word = token; and the first call
 
     while (strToken != NULL && i < MAX_ARGS - 1) //Leave the '\0' at the end 
