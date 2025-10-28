@@ -23,16 +23,16 @@ int main()
     printf("bob: %s\n", result ? result : "NULL");
 
     result = hash_table_get(ht, "charlie");
-    printf("bob: %s\n", result ? result : "NULL");
+    printf("charlie: %s\n", result ? result : "NULL");
 
     result = hash_table_get(ht, "albert");
-    printf("bob: %s\n", result ? result : "NULL");
+    printf("albert: %s\n", result ? result : "NULL");
 
     result = hash_table_get(ht, "daphne");
-    printf("bob: %s\n", result ? result : "NULL");
+    printf("daphne: %s\n", result ? result : "NULL");
 
     result = hash_table_get(ht, "bernard");
-    printf("bob: %s\n", result ? result : "NULL");
+    printf("bernard: %s\n", result ? result : "NULL");
     
     result = hash_table_get(ht, "inexistant");
     printf("inexistant: %s\n", result ? result : "NULL");
@@ -44,14 +44,27 @@ int main()
     
     // 5. Test the resizing
     printf("\nTesting resize...\n");
-    for (int i = 0; i < 20; i++)
-    {
-        char key[10], data[10];
-        snprintf(key, sizeof(key), "key%d", i);
-        snprintf(data, sizeof(data), "data%d", i);
-        hash_table_insert(ht, key, data);
-    }
-    
+    hash_table_insert(ht, "test1", "value1");
+    hash_table_insert(ht, "test2", "value2");
+    hash_table_insert(ht, "test3", "value3");
+    hash_table_insert(ht, "test4", "value4");
+    hash_table_insert(ht, "test5", "value5");
+    hash_table_insert(ht, "test6", "value6");
+    hash_table_insert(ht, "test7", "value7");
+    hash_table_insert(ht, "test8", "value8");
+    hash_table_insert(ht, "test9", "value9");
+    hash_table_insert(ht, "test10", "value10");
+    hash_table_insert(ht, "test11", "value11");
+    hash_table_insert(ht, "test12", "value12");
+    hash_table_insert(ht, "test13", "value13");
+    hash_table_insert(ht, "test14", "value14");
+    hash_table_insert(ht, "test15", "value15");
+    hash_table_insert(ht, "test16", "value16");
+    hash_table_insert(ht, "test17", "value17");
+    hash_table_insert(ht, "test18", "value18");
+    hash_table_insert(ht, "test19", "value19");
+    hash_table_insert(ht, "test20", "value20");
+
     printf("Load factor after adding 20 elements: %.2f\n", hash_table_load_factor(ht));
     printf("Capacity: %zu, Size: %zu\n", ht->capacity, ht->size);
     

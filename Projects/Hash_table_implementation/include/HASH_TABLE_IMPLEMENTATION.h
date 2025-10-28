@@ -14,9 +14,9 @@ typedef struct Node
 
 typedef struct HashTable
 {   
-    Node **buckets;
-    size_t size;
-    size_t capacity;
+    Node **buckets; //array of linked list
+    size_t size;    //nbr of entries
+    size_t capacity;//nrb of buckets
 } HashTable;
 
 
@@ -34,4 +34,4 @@ char* hash_table_get(HashTable* ht, char* key);
 void hash_table_delete(HashTable* ht, char* key);
 void hash_table_destroy(HashTable* ht);
 
-#endif
+#endif 

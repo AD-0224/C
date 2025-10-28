@@ -53,10 +53,10 @@ make run
 Load factor: 0.86
 alice: 123
 bob: 456
-bob: 789
-bob: 012
-bob: 234
-bob: 567
+charlie: 789
+albert: 012
+daphne: 234
+bernard: 567
 inexistant: NULL
 bob après suppression: NULL
 

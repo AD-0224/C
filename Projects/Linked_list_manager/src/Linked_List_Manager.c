@@ -4,7 +4,7 @@ IntArray *create_array(size_t initial_capacity)
 {
     IntArray *arr = malloc(sizeof(IntArray));
     if (!arr)
-    {
+    { 
         printf("Allocation error\n");
         return (NULL);
     }
