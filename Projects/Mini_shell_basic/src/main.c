@@ -20,17 +20,12 @@ int main ()
 
         if (parsed_args[0] == NULL)
             continue;
-
         if (strcmp(parsed_args[0], "cd") == 0)
             builtin_cd(parsed_args);
         else if (strcmp(parsed_args[0], "pwd") == 0)
             builtin_pwd();
         else if (strcmp(parsed_args[0], "exit") == 0)
             builtin_exit();
-        if (parsed_args[1] == NULL)
-        {
-            chdir(getenv("HOME")); //go home if no argument
-        }
         else
         {
             execute_command(parsed_args);

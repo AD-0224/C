@@ -40,8 +40,10 @@ int builtin_cd(char **args) //change the folder
 {
     if (args[1] == NULL)
     {
-        printf("Missing arguments\n");
-        return 1;
+        // printf("Missing arguments\n");
+        // return 1;
+        chdir(getenv("HOME")); //expected behavior
+        return 0;
     }
 
     if (chdir(args[1]) != 0)
@@ -61,7 +63,7 @@ int execute_command(char **args)
         perror("exec failed");
         exit(1);
     }
-    if (pid > 0) //father
+    else if (pid > 0) //father
     {
         wait(NULL);
         return 0;
