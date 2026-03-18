@@ -1,4 +1,3 @@
-
 #include "push_swap.h"
 
 int	find_min_index(int *a, int size)

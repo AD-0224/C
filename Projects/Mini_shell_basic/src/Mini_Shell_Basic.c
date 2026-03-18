@@ -9,9 +9,9 @@ char **parse_input(char *input, char **args)
     while (strToken != NULL && i < MAX_ARGS - 1) //Leave the '\0' at the end 
     {
         args[i++] = strToken;
-        strToken = strtok (NULL, separators); //next call into the separators
+        strToken = strtok (NULL, separators); //Next call into the separators
     }
-    args[i] = NULL; //add NULL at the end 
+    args[i] = NULL; //Add NULL at the end 
     return args;
 }
 
@@ -22,13 +22,15 @@ int is_builtin(char *cmd)
     else 
         return 0;
 }
-int builtin_exit() // in exit case 
+// In exit case 
+int builtin_exit() 
 {
     printf("Goodbye !");
     exit(0);
 }
 
-int builtin_pwd() // in pwd case display the current folder 
+// In pwd case display the current folder 
+int builtin_pwd() 
 {
     char cwd[1024];
     getcwd(cwd, sizeof(cwd));
@@ -36,7 +38,8 @@ int builtin_pwd() // in pwd case display the current folder
     return 0;
 }
 
-int builtin_cd(char **args) //change the folder
+//Change the folder
+int builtin_cd(char **args)
 {
     if (args[1] == NULL)
     {

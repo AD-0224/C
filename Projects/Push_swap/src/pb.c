@@ -1,4 +1,3 @@
-
 #include "push_swap.h"
 
 void	pb(int *a, int *size_a, int *b, int *size_b)

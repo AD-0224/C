@@ -3,42 +3,41 @@
 
 typedef struct 
 {
-    char nom[100];
+    char name[100];
     int age;
-    float taille;
+    float height;
 }
-etudiant;
+student;
 
 int main ()
 {
     int n;
-    printf("Combien y'a t'il d'etudiant? ");
-    scanf("%d", &n);
+    printf("How many students are there? ");
+    scanf(" %d", &n);
 
-    etudiant* liste = malloc(sizeof(etudiant) * n);
+    student* liste = malloc(sizeof(student) * n);
     if (liste == NULL)
     {
-        printf("Erreur d'allocation\n");
+        printf("Allocation error\n");
         return (1);
     }
     for (int i = 0; i < n;  i++)
     {
-        printf("L'etudiant: %d\n ", i + 1);
+        printf("The student: %d\n ", i + 1);
 
-        printf("Nom: ");
-        scanf("%s", liste[i].nom);
+        printf("Name: ");
+        scanf("%s", liste[i].name);
         printf("Age: ");
         scanf("%d", &liste[i].age);
 
-        printf("Taille: ");
-        scanf("%f", &liste[i].taille);
+        printf("Height: ");
+        scanf("%f", &liste[i].height);
     }
-    printf("---LISTES DES ETUDIANTS---\n");
+    printf("---STUDENT LISTS---\n");
     for (int i = 0; i < n; i++)
     {
-        printf("NOM: %s | AGE: %d  | TAILLE: %.2f m\n", liste[i].nom, liste[i].age, liste[i].taille);
+        printf("NAME: %s | AGE: %d  | HEIGHT: %.2f m\n", liste[i].name, liste[i].age, liste[i].height);
     }
     free (liste);
     return (0);
-
 }

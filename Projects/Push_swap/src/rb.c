@@ -1,4 +1,3 @@
-
 #include "push_swap.h"
 
 void	rb(int *b, int size)

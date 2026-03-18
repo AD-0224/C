@@ -5,10 +5,10 @@ void skip_whitespace(char **json)
     while (**json == 32 || **json == 9 || **json == 10 || **json == 13)
         (*json)++;
 }
-char *parse_string(char **json) //enlever les guillemets
+char *parse_string(char **json) //Remove the quotation marks
 {
     (*json)++;
-    int len = 0; //compteur 
+    int len = 0; //Counter 
 
     char *temp = *json;
     while (*temp && *temp != '"')
@@ -53,7 +53,7 @@ char *parse_string(char **json) //enlever les guillemets
 double parse_number(char **json)
 {
     char buffer[64];
-    int i = 0; //index ecriture dans le buffer
+    int i = 0; //Index write to buffer
 
      if (**json == '-')
      {
@@ -62,11 +62,11 @@ double parse_number(char **json)
      }
     while ((**json >= '0' && **json <= '9') || (**json == '.'))
     {
-        buffer[i++] = **json; // on le copie dans le buffer
+        buffer[i++] = **json; //We copy it into the buffer
         (*json)++; 
     }
     buffer[i] = '\0';
-    return atof(buffer); //asci  to float "213.6" -> 213.6
+    return atof(buffer); //ASCII  to float "213.6" -> 213.6
 }
 
 int parse_boolean(char **json)
@@ -74,12 +74,12 @@ int parse_boolean(char **json)
     if (strncmp(*json, "true", 4) == 0) 
     {
         *json += 4;
-        return 1;    // vrai
+        return 1; // True
     }
     else if (strncmp(*json, "false", 5) == 0)
     {
         *json += 5;
-        return 0; // faux
+        return 0; //False
     }
     return -1; 
 }
@@ -90,13 +90,13 @@ JSONArray* parse_array(char **json)
     (*json)++;
     skip_whitespace(json);
 
-    JSONArray *array = malloc(sizeof(JSONArray));  //crée la structure
+    JSONArray *array = malloc(sizeof(JSONArray)); //Creates the structure
     if (!array) exit(EXIT_FAILURE);
     
-    array->items = NULL;                           //initialise
+    array->items = NULL; //Initialize
     array->count = 0;
 
-    if (**json == ']')          //array vide []
+    if (**json == ']') //Empty array []
     {                     
         (*json)++;
         return array;
@@ -107,8 +107,8 @@ JSONArray* parse_array(char **json)
         JSONValue *value = parse_value(json);
         if (!value) return array;
 
-        array->items = realloc(array->items, sizeof(JSONValue*) * (array->count + 1));  //grandit dynamiquement
-        array->items[array->count++] = value;      //stocke la valeur
+        array->items = realloc(array->items, sizeof(JSONValue*) * (array->count + 1)); //Grows dynamically
+        array->items[array->count++] = value; //Stores the value
 
         skip_whitespace(json);
 
@@ -131,21 +131,21 @@ JSONObject* parse_object(char **json)
     if (**json != '{') 
         return NULL;
     
-    (*json)++;  // sauter '{'
+    (*json)++;  //skip '{'
     skip_whitespace(json);
     JSONObject *obj = malloc(sizeof(JSONObject));
     if (!obj) exit(EXIT_FAILURE);
     
-    obj->pairs = NULL; //initialisation
-    obj->count = 0;    //iitialisation
-    if (**json == '}')  // objet vide {}
+    obj->pairs = NULL; //Initialization
+    obj->count = 0;    //Initialization
+    if (**json == '}')  //Empty object {}
     {
         (*json)++;
         return obj;
     }
     while (**json && **json != '}')
     {
-        //lire la clé (toujours une string)
+        //Read the key (always a string)
         if (**json == '"')
         {
             char *key = parse_string(json);
@@ -167,7 +167,7 @@ JSONObject* parse_object(char **json)
             }
             else
             {
-                printf("Erreur : ':' attendu après la clé\n");
+                printf("Error: ':' expected after the key\n");
                 free(key);
                 return obj;
             }
@@ -196,27 +196,27 @@ JSONValue* parse_value(char **json)
     JSONValue *value = malloc(sizeof(JSONValue));
     if (!value) exit(EXIT_FAILURE);
 
-    if (**json == '"')      // ← Chaîne
+    if (**json == '"') // ← String
     {                     
         value->type = JSON_STRING;
         value->data.string = parse_string(json);
     }
-    else if (**json == '[')     // ← Array
+    else if (**json == '[') // ← Array
     {            
         value->type = JSON_ARRAY;
         value->data.array = parse_array(json);
     }
-    else if (**json == '{')       // ← Objet
+    else if (**json == '{') // ← Object
     {             
         value->type = JSON_OBJECT;
         value->data.object = parse_object(json);
     }
-    else if (**json == 't' || **json == 'f')    // ← Boolean
+    else if (**json == 't' || **json == 'f') // ← Boolean
     { 
         value->type = JSON_BOOLEAN;
         value->data.boolean_value = parse_boolean(json);
     }
-    else if (**json == 'n')     //null
+    else if (**json == 'n') //null
     { 
         JSONValue *null_val = parse_null(json);
         if (null_val)
@@ -225,7 +225,7 @@ JSONValue* parse_value(char **json)
             return null_val;
         }
     }
-    else if (**json == '-' || (**json >= '0' && **json <= '9'))     //Nombre
+    else if (**json == '-' || (**json >= '0' && **json <= '9')) //Number
     { 
         value->type = JSON_NUMBER;
         value->data.number = parse_number(json);
@@ -259,7 +259,7 @@ void free_value(JSONValue *value)
     {
         free(value->data.string);
     }
-    else if (value->type == JSON_ARRAY) //double pointeur donc boucle et on free de l'enfant au parent 
+    else if (value->type == JSON_ARRAY) //double pointer, therefore loop and free from child to parent
     {
         for (int i = 0; i < value->data.array->count; i++)
         {

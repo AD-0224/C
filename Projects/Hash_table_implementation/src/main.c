@@ -68,12 +68,12 @@ int main()
     printf("Load factor after adding 20 elements: %.2f\n", hash_table_load_factor(ht));
     printf("Capacity: %zu, Size: %zu\n", ht->capacity, ht->size);
     
-    // 6. Test de mise à jour d'une clé existante
+    // 6. Testing an update of an existing key
     hash_table_insert(ht, "alice", "new_value");
     result = hash_table_get(ht, "alice");
     printf("alice après mise à jour: %s\n", result ? result : "NULL");
     
-    // 7. Nettoyer
+    // 7. Clear
     hash_table_destroy(ht);
     return 0;
 }

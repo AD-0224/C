@@ -1,46 +1,46 @@
 #include"server.h"
 int main (void)
 {
-    int server_fd; //socket serveur
-    struct sockaddr_in server_addr; //structure contenant les infos réseaux du serveur
+    int server_fd; //Server Socket
+    struct sockaddr_in server_addr; //structure containing the server's network information
   
-    int client_fds[MAX_CLIENTS]; //tableau sockets clients
-    int fd_max; //pour select
-    fd_set readfds; //surveillé par select
-    char buffer[BUFFER_SIZE]; //pour copier
+    int client_fds[MAX_CLIENTS]; //Table of client sockets
+    int fd_max; //For select
+    fd_set readfds; //Monitored by select
+    char buffer[BUFFER_SIZE]; //For copy
     
     for (int i = 0; i < MAX_CLIENTS; i++)
-        client_fds[i] = -1; // initialise le tableau à -1 slot libre
+        client_fds[i] = -1; // Initializes the array to -1 free slot
     
-    server_fd = socket(AF_INET, SOCK_STREAM, 0); //AF_INET= adresse famille IPV4; SOCK_STREAM= type de communication fluide; 0 protocole par défaut ici TCP
-    if (server_fd < 0){perror("Socket"); exit(EXIT_FAILURE);} //toujours sécurisé pour éviter des comportements indéfinis
+    server_fd = socket(AF_INET, SOCK_STREAM, 0); //AF_INET= IPv4 address family; SOCK_STREAM= fluid communication type; 0 default protocol here TCP
+    if (server_fd < 0){perror("Socket"); exit(EXIT_FAILURE);} //Always secure to prevent undefined behavior
 
-    memset(&server_addr, 0, sizeof(server_addr)); //rappel memset initialise à une valeure choisie
+    memset(&server_addr, 0, sizeof(server_addr)); //Reminder memset initializes to a chosen value
     server_addr.sin_family = AF_INET;
-    server_addr.sin_addr.s_addr = INADDR_ANY; //accepte toutes les interfaces
-    server_addr.sin_port = htons(PORT); //conversion de port
+    server_addr.sin_addr.s_addr = INADDR_ANY; //Accepts all interfaces
+    server_addr.sin_port = htons(PORT); //Port conversion
 
-    //bind = socket <-> serveur
+    //bind = socket <-> server
     if (bind(server_fd, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0)
     {
         perror("bind");
         close(server_fd);
-        exit(EXIT_FAILURE); //proteger les fluxs suivants
+        exit(EXIT_FAILURE); //protect the following streams
     }
-    //listen = socket en mode écoute
+    //Listen = socket in listening mode
     if(listen(server_fd, MAX_CLIENTS) < 0)
     {
-         perror("listen");close(server_fd); exit(EXIT_FAILURE); //proteger les fluxs suivants
+         perror("listen");close(server_fd); exit(EXIT_FAILURE); //Protect the following streams
     }
     printf("Le serveur écoute sur le port : %d\n",PORT);
 
     while (1)
     {
-        FD_ZERO(&readfds); //on vide tout on doit reiterer à chaque itération
-        FD_SET(server_fd, &readfds); //ajt le fd dans l'ensemble à surveiller
-        fd_max = server_fd; //initialise fd_max
+        FD_ZERO(&readfds); //We empty everything, we must repeat this at each iteration
+        FD_SET(server_fd, &readfds); //Add the fd in the whole to monitor
+        fd_max = server_fd;
 
-        //ajt tous les clients actifs à readfds
+        //Add all active clients to readfds
         for(int i = 0; i < MAX_CLIENTS; i++)
         {
             if(client_fds[i] != -1)
@@ -50,17 +50,18 @@ int main (void)
                     fd_max = client_fds[i];
             }
         }
-        //select: attend qu'un fd soit prêt
+        //Select: wait until a file is ready
         if (select(fd_max + 1, &readfds, NULL, NULL, NULL) < 0)
         {
              perror("select");
              break;
         }
-        //nouvelle connexion détecté
-        if (FD_ISSET(server_fd, &readfds)) //test si le fd fait partie de l'ensemble aprés select
+        //New connection detected
+        //Test if the fd is part of the set after select
+        if (FD_ISSET(server_fd, &readfds))
             accept_new_client(server_fd,client_fds,MAX_CLIENTS);
     
-        //lecture données clients
+        //Reading client data
         for(int i = 0; i < MAX_CLIENTS; i++)
         {
             int fd = client_fds[i];

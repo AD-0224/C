@@ -1,4 +1,3 @@
-
 #include "push_swap.h"
 
 void	sort_five(int *a, int *b, int *size_a, int *size_b)

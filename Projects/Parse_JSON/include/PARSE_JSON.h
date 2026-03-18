@@ -6,7 +6,7 @@
 #ifndef PARSE_JSON_H
 #define PARSE_JSON_H
 
-typedef enum //énumeration
+typedef enum //enumeration
 {
     JSON_NULL,
     JSON_NUMBER,
@@ -16,7 +16,7 @@ typedef enum //énumeration
     JSON_OBJECT,
 }JsonType;
 
-typedef struct JSONValue //valeur
+typedef struct JSONValue //value
 {
     JsonType type;
     union
@@ -30,19 +30,19 @@ typedef struct JSONValue //valeur
     }data;
 }JSONValue;
 
-typedef struct JSONPair //clé-valeur
+typedef struct JSONPair //Key-value
 {
-    char *key; //ex: nom
+    char *key; //ex: name
     JSONValue *value; // ex: Matteo 
 }JSONPair;
 
-typedef struct JSONObject //objet
+typedef struct JSONObject //object
 {
-    JSONPair *pairs; // une paire = une clé-valeur
+    JSONPair *pairs; //A pair = a key-value pair
     int count;
 }JSONObject;
 
-typedef struct JSONArray //tableau
+typedef struct JSONArray //Array
 {
     JSONValue **items;
     int count;

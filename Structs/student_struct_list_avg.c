@@ -3,51 +3,51 @@
 
 typedef struct
 {
-    char nom[100];
+    char name[100];
     int age;
-    float taille;
-    float moyenne;
+    float height;
+    float average;
 }
-etudiant;
+student;
 
 int main ()
 {
     int n;
-    float generale = 0;
-    etudiant* liste = malloc(sizeof(etudiant) * n);
+    float general = 0;
+    student* liste = malloc(sizeof(student) * n);
     if (liste == NULL)
     {
-        printf("Erreur d'allocation\n");
+        printf("Allocation error\n");
         return (1);
     }
-    printf("Nombre d'etudiants: ");
+    printf("Number of students: ");
     scanf("%d", &n);
 
     for (int i = 0; i < n; i++)
     {
-        printf("Etudiant: %d \n", i+1);
+        printf("Student: %d \n", i+1);
 
-        printf("NOM: ");
-        scanf("%s", liste[i].nom);
+        printf("NAME: ");
+        scanf("%s", liste[i].name);
 
         printf("AGE: ");
         scanf("%d", &liste[i].age);
 
-        printf ("TAILLE: ");
-        scanf("%f", &liste[i].taille);
+        printf ("HEIGHT: ");
+        scanf("%f", &liste[i].height);
 
-        printf("MOYENNE: ");
-        scanf("%f", &liste[i].moyenne);
+        printf("AVERAGE: ");
+        scanf("%f", &liste[i].average);
     }
 
     for (int i = 0; i < n; i++)
     {
-        generale += (liste[i].moyenne);
-        printf("NOM: %s | AGE: %d | TAILLE: %.2f | MOYENNE: %.2f\n", liste[i].nom, liste[i].age, liste[i].taille, liste[i].moyenne);
+        general += (liste[i].average);
+        printf("NAME: %s | AGE: %d | HEIGHT: %.2f | AVERAGE: %.2f\n", liste[i].name, liste[i].age, liste[i].height, liste[i].average);
         
     }
-    generale /= n;
-    printf("La moyenne des etudiants est de: %.2f", generale);
+    general /= n;
+    printf("The average student is: %.2f", general);
     free (liste);
     return (0);
 }

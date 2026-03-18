@@ -1,4 +1,3 @@
-
 #include "push_swap.h"
 
 int	ft_atoi_safe(const char *str, int *out)

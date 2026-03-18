@@ -1,23 +1,23 @@
 #include "server.h"
 
-//Logging simple: écrit un msg dans le fichier LOG_FILE (nouvelle notion)
+//Simple logging: writes a message to the LOG_FILE file (new concept)
 void log_event(const char *msg)
 {
-     FILE *log = fopen(LOG_FILE, "a"); //pointe vers une structure
+     FILE *log = fopen(LOG_FILE, "a"); //points to a structure
      if (log)
      {
         time_t now = time(NULL);
-        fprintf(log, "[%s] %s", ctime(&now), msg); //fprintf = écrire dans un fichier
+        fprintf(log, "[%s] %s", ctime(&now), msg); //fprintf = write to a file
         fclose(log);
      }
 }
-//Broadcast : envoie un message à tout le monde sauf l'envoyeur (nouvelle notion)
+//Broadcast: sends a message to everyone except the sender (new concept)
 void broadcast_message(const char *msg, int sender_fd, int client_fds[], int max_clients)
 {
     for (int i = 0; i < max_clients; i++)
     {
-        if (client_fds[i] != -1 && client_fds[i] != sender_fd) //-1 cases vides
-            send(client_fds[i], msg, strlen(msg), 0); //socket, buffer, taille, flag
+        if (client_fds[i] != -1 && client_fds[i] != sender_fd) //-1 empty cells
+            send(client_fds[i], msg, strlen(msg), 0); //socket, buffer, size, flag
     }
 }
 int accept_new_client(int server_fd, int client_fds[], int max_clients)
@@ -37,13 +37,13 @@ int accept_new_client(int server_fd, int client_fds[], int max_clients)
         {
             client_fds[i] = client_fd;
             char log_msg[128];
-            snprintf(log_msg, sizeof(log_msg), "Nouveau client connecté : fd = %d", client_fd);
+            snprintf(log_msg, sizeof(log_msg), "New client connected : fd = %d", client_fd);
             printf("%s\n", log_msg);
             log_event(log_msg);
             return client_fd;
         }
     }
-    printf("Serveur plein, connexion refusé : fd = %d\n", client_fd); // si il y'a plus de place donc > max_clients
+    printf("Server full, connection refused : fd = %d\n", client_fd); // If there is more space, then > max_clients
     close(client_fd);
     return -1;
 }
@@ -53,7 +53,7 @@ int handle_client_data(int fd, int client_fds[], char *buffer)
     if (bytes <= 0)
     {
         char log_message[128];
-        snprintf(log_message, sizeof(log_message), "Client fd = %d s'est déconnecté", fd);
+        snprintf(log_message, sizeof(log_message), "Client fd = %d has disconnected", fd);
         printf("%s\n", log_message);
         log_event(log_message);
         close(fd);
@@ -72,7 +72,7 @@ int handle_client_data(int fd, int client_fds[], char *buffer)
     {
         buffer[bytes] = '\0';
         char log_msg[128];
-        snprintf(log_msg, sizeof(log_msg), "Client fd = %d dit : %s", fd, buffer);
+        snprintf(log_msg, sizeof(log_msg), "Client fd = %d says : %s", fd, buffer);
         printf("%s\n", log_msg);
         log_event(log_msg);
 

@@ -21,7 +21,7 @@
     printf("HEIGHT: ");
     scanf("%f", &user1 ->height);
 
-    printf("The user name is %s, he's %d ans his height is: %.2f", user1 ->name, user1->age, user1->height);
+    printf("The user name is %s, s(he) %d ans his height is: %.2f\n", user1 ->name, user1->age, user1->height);
     free (user1);
     return (0);
  }

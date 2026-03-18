@@ -4,39 +4,39 @@
 
 typedef struct
 {
-    char nom[100];
+    char name[100];
     int age;
-    float taille;
-    float moyenne;
-} etudiant;
+    float height;
+    float average;
+} student;
 
 int main()
 {
     int n;
     int c;
-    float moyenneg = 0;
+    float averageg = 0;
 
-    printf("Combien y a-t-il d'étudiants ? ");
+    printf("How many students are there? ");
     scanf("%d", &n);
     while ((c = getchar()) != '\n' && c != EOF);
 
-    etudiant* liste = malloc(sizeof(etudiant) * n);
+    student* liste = malloc(sizeof(student) * n);
     if (liste == NULL)
     {
-        printf("Erreur d'allocation\n");
+        printf("Allocation error\n");
         return 1;
     }
 
     for (int i = 0; i < n; i++)
     {
-        printf("\nÉtudiant %d\n", i + 1);
+        printf("\nStudent %d\n", i + 1);
 
-        printf("NOM : ");
-        fgets(liste[i].nom, sizeof(liste[i].nom), stdin);
-        size_t len = strlen(liste[i].nom);
-        if (len > 0 && liste[i].nom[len - 1] == '\n')
+        printf("NAME : ");
+        fgets(liste[i].name, sizeof(liste[i].name), stdin);
+        size_t len = strlen(liste[i].name);
+        if (len > 0 && liste[i].name[len - 1] == '\n')
         {
-            liste[i].nom[len - 1] = '\0';
+            liste[i].name[len - 1] = '\0';
         }
 
         printf("AGE : ");
@@ -44,24 +44,24 @@ int main()
         while ((c = getchar()) != '\n' && c != EOF);
 
         printf("TAILLE : ");
-        scanf("%f", &liste[i].taille);
+        scanf("%f", &liste[i].height);
         while ((c = getchar()) != '\n' && c != EOF);
 
         printf("MOYENNE : ");
-        scanf("%f", &liste[i].moyenne);
+        scanf("%f", &liste[i].average);
         while ((c = getchar()) != '\n' && c != EOF);
 
-        moyenneg += liste[i].moyenne;
+        averageg += liste[i].average;
     }
 
-    moyenneg /= n;
+    averageg /= n;
 
     printf("\n--- LISTES ---\n");
     for (int i = 0; i < n; i++)
     {
-        printf("NOM: %s | AGE: %d | TAILLE: %.2f | MOYENNE: %.2f\n", liste[i].nom, liste[i].age, liste[i].taille, liste[i].moyenne);
+        printf("NAME: %s | AGE: %d | HEIGHT: %.2f | AVERAGE: %.2f\n", liste[i].name, liste[i].age, liste[i].height, liste[i].average);
     }
-    printf("\nLa moyenne générale est de : %.2f\n", moyenneg);
+    printf("\nThe overall average is : %.2f\n", averageg);
     free(liste);
     return 0;
 }
