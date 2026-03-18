@@ -80,7 +80,7 @@ alice après mise à jour: new_value
 
 MIT License — feel free to use, modify and share.
 
-
+---
 
 ════════════ FRANÇAIS ════════════
 
