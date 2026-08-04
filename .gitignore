@@ -1,0 +1,13 @@
+.vscode/
+.DS_Store
+
+*.o
+*.out
+*.exe
+*.swp
+
+a.out
+
+bin/
+build/
+DRAFT/
