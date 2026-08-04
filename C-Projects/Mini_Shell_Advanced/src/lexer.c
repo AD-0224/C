@@ -59,7 +59,7 @@ t_token *lexer(char *line)
         if (*line == '\0')
             break;
 
-        // PIPE
+        //PIPE
         if (*line == '|')
         {
             add_token(&tokens, new_token(strdup("|"), TOKEN_PIPE));
@@ -67,7 +67,7 @@ t_token *lexer(char *line)
             continue;
         }
 
-        // REDIRECTIONS
+        //REDIRECTIONS
         if (*line == '>')
         {
             if (*(line + 1) == '>')
@@ -98,7 +98,7 @@ t_token *lexer(char *line)
             continue;
         }
 
-        // WORD
+        //WORD
         word = read_word(&line);
 
         int is_target = 0;

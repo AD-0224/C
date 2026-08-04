@@ -20,8 +20,8 @@ void execute_command(char *line)
     t_token *tokens;
     t_cmd *cmd;
 
-    tokens = lexer(line); //découpe
-    cmd = parseur(tokens); //comprend 
+    tokens = lexer(line);
+    cmd = parseur(tokens);
     free_tokens(tokens);
 
     if (cmd)

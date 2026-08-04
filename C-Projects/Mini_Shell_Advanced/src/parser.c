@@ -109,23 +109,23 @@ static int check_syntax(t_token *tokens)
     if (!tokens)
         return (0);
 
-    // for the pipe of the beginning
+    //for the pipe of the beginning
     if (tokens->type == TOKEN_PIPE)
         return (1);
 
     while(tokens)
     {
-        // last pipe
+        //last pipe
         if (tokens->type == TOKEN_PIPE && tokens->next == NULL)
             return (1);
 
-        // two pipe in a row
+        //two pipe in a row
         if (tokens->type == TOKEN_PIPE
             && tokens->next
             && tokens->next->type == TOKEN_PIPE)
             return (1);
 
-        // file-free redirection
+        //file-free redirection
         if ((tokens->type == TOKEN_REDIR_IN
             || tokens->type == TOKEN_REDIR_OUT
             || tokens->type == TOKEN_APPEND

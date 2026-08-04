@@ -96,8 +96,8 @@ static void exec_external(t_cmd *cmd)
     exit(126);
 }
 
-// Une seule commande, sans pipe : on ne fork que si necessaire.
-// cd/export/unset/exit doivent tourner DANS le shell parent pour avoir un effet.
+//A single command, without a pipe: fork only when necessary.
+//cd/export/unset/exit must run WITHIN the parent shell to have an effect.
 static void run_single(t_cmd *cmd)
 {
     pid_t pid;
@@ -144,8 +144,8 @@ static int count_cmds(t_cmd *cmds)
     return (n);
 }
 
-// Plusieurs commandes reliees par des pipes : on cree n-1 pipes,
-// on fork n enfants, chacun se branche sur le pipe precedent/suivant.
+//Multiple commands connected by pipes: create n-1 pipes,
+//Fork n children, each connecting to the preceding/next pipe.
 static void run_pipeline(t_cmd *cmds)
 {
     int n;
