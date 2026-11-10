@@ -1,5 +1,6 @@
 ## 🇬🇧 English
 
+
 🧠 Hash Table Implementation in C
 
 A robust hash table implementation in C with separate chaining for collision handling, automatic resizing, and full memory management.
