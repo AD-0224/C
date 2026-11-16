@@ -1,6 +1,7 @@
 .vscode/
 .DS_Store
 
+
 *.o
 *.out
 *.exe
@@ -11,3 +12,4 @@ a.out
 bin/
 build/
 DRAFT/
+node_modules/
